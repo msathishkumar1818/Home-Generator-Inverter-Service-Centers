@@ -323,30 +323,65 @@ html.dark .pr-flagship-section {
   border-radius: var(--radius-lg);
   overflow: hidden;
   height: 520px;
-  background: var(--color-navy);
-  box-shadow: 0 20px 48px rgba(11, 31, 58, 0.14);
+  background: #ffffff;
+  border: 1px solid var(--color-border);
+  box-shadow: 0 16px 40px rgba(11, 31, 58, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+html.dark .pr-flagship-media {
+  background: #0d1726;
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
 }
 
 .pr-flagship-media img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  object-position: center bottom;
+  padding: 42px 24px 20px;
   display: block;
+  transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.pr-flagship-media:hover img {
+  transform: scale(1.02);
 }
 
 .pr-flagship-badge {
   position: absolute;
-  top: 24px;
-  left: 24px;
+  top: 18px;
+  left: 18px;
+  z-index: 4;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   background: rgba(11, 31, 58, 0.92);
-  border: 1px solid var(--color-orange);
-  padding: 8px 16px;
-  border-radius: var(--radius-sm);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 107, 53, 0.45);
+  box-shadow: 0 4px 14px rgba(11, 31, 58, 0.18);
+  padding: 6px 14px;
+  border-radius: 9999px;
   color: var(--color-white);
-  font-size: 0.75rem;
-  font-weight: 800;
-  letter-spacing: 0.08em;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.pr-flagship-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--color-orange);
+  box-shadow: 0 0 8px var(--color-orange);
+  display: inline-block;
+  flex-shrink: 0;
 }
 
 /* Right Mechanical Breakdown */
@@ -878,7 +913,18 @@ html.dark .pr-accessories-section {
   }
 
   .pr-flagship-media {
-    height: 380px;
+    height: 400px;
+  }
+
+  .pr-flagship-media img {
+    padding: 38px 20px 16px;
+  }
+
+  .pr-flagship-badge {
+    top: 14px;
+    left: 14px;
+    padding: 5px 12px;
+    font-size: 0.70rem;
   }
 
   .pr-inverter-grid {
@@ -903,6 +949,27 @@ html.dark .pr-accessories-section {
 @media (max-width: 640px) {
   .pr-hero-title {
     font-size: 2.1rem;
+  }
+
+  .pr-flagship-media {
+    height: 330px;
+  }
+
+  .pr-flagship-media img {
+    padding: 36px 16px 14px;
+  }
+
+  .pr-flagship-badge {
+    top: 12px;
+    left: 12px;
+    padding: 5px 10px;
+    font-size: 0.67rem;
+    gap: 6px;
+  }
+
+  .pr-flagship-dot {
+    width: 6px;
+    height: 6px;
   }
 
   .pr-spec-pillar {
@@ -937,5 +1004,12 @@ html.dark .pr-accessories-section {
 
 [dir="rtl"] .pr-flagship-badge {
   left: auto;
-  right: 24px;
+  right: 18px;
+}
+
+@media (max-width: 640px) {
+  [dir="rtl"] .pr-flagship-badge {
+    left: auto;
+    right: 12px;
+  }
 }

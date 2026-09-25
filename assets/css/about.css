@@ -391,50 +391,68 @@ html.dark .ab-engineers-section {
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 28px 24px;
-  background: linear-gradient(to top, rgba(11, 31, 58, 0.98) 0%, rgba(11, 31, 58, 0.6) 65%, transparent 100%);
+  padding: 24px 20px 22px 20px;
+  background: linear-gradient(to top, rgba(7, 21, 39, 0.98) 0%, rgba(7, 21, 39, 0.85) 60%, rgba(7, 21, 39, 0) 100%);
   color: var(--color-white);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 
 .ab-eng-role {
-  font-size: 0.74rem;
+  font-size: 0.70rem;
   font-weight: 800;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.06em;
   color: var(--color-cyan);
   text-transform: uppercase;
   margin-bottom: 6px;
+  line-height: 1.25;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .ab-eng-name {
-  font-size: 1.3rem;
+  font-size: 1.28rem;
   font-weight: 700;
   color: var(--color-white);
   line-height: 1.2;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
+  white-space: nowrap;
 }
 
 .ab-eng-credentials {
-  font-size: 0.82rem;
+  font-size: 0.81rem;
   color: #FFFFFF;
   font-weight: 500;
-  line-height: 1.4;
+  line-height: 1.45;
+  min-height: 4.35em;
   margin-bottom: 12px;
 }
 
 .ab-eng-spec-tags {
   display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: nowrap;
+  width: 100%;
 }
 
 .ab-tag-pill {
-  font-size: 0.7rem;
+  font-size: 0.68rem;
   font-weight: 700;
-  padding: 3px 10px;
+  padding: 4px 8px;
   border-radius: var(--radius-full);
   background: rgba(0, 184, 217, 0.15);
-  border: 1px solid rgba(0, 184, 217, 0.3);
+  border: 1px solid rgba(0, 184, 217, 0.32);
   color: var(--color-white);
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  line-height: 1.2;
+  flex: 0 0 auto;
 }
 
 /* --------------------------------------------------------------------------
@@ -695,11 +713,43 @@ html.dark .ab-pillars-section {
 
   .ab-engineer-roster {
     grid-template-columns: repeat(3, 1fr) !important;
-    gap: 18px !important;
+    gap: 16px !important;
   }
 
   .ab-engineer-panel {
-    height: 480px !important;
+    height: 490px !important;
+  }
+
+  .ab-engineer-details {
+    padding: 24px 16px 20px 16px !important;
+  }
+
+  .ab-eng-role {
+    font-size: 0.67rem !important;
+    letter-spacing: 0.05em !important;
+    white-space: nowrap !important;
+  }
+
+  .ab-eng-name {
+    font-size: 1.22rem !important;
+  }
+
+  .ab-eng-credentials {
+    font-size: 0.79rem !important;
+    line-height: 1.45 !important;
+    min-height: 4.35em !important;
+    margin-bottom: 12px !important;
+  }
+
+  .ab-eng-spec-tags {
+    gap: 6px !important;
+    flex-wrap: nowrap !important;
+  }
+
+  .ab-tag-pill {
+    font-size: 0.66rem !important;
+    padding: 4px 7px !important;
+    white-space: nowrap !important;
   }
 
   .ab-standards-grid {
