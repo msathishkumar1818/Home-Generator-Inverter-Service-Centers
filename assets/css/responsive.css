@@ -1,0 +1,961 @@
+/* ==========================================================================
+   Home Generator & Inverter Service Center - Responsive Stylesheet
+   Breakpoints: 1366px, 1194px, 1180px, 1024px, 900px, 768px, 480px, 360px
+   ========================================================================== */
+
+/* ============================================================
+   TABLET TYPOGRAPHY — iPad Pro 13" Landscape (1025px–1366px)
+   Pixel 9 Pro / Samsung Galaxy Tab S9 Ultra landscape
+   ============================================================ */
+@media screen and (min-width: 1025px) and (max-width: 1366px) {
+  html {
+    font-size: 18px;
+  }
+
+  body {
+    line-height: 1.75;
+  }
+
+  /* Hero headings — bump clamp max on large tablets */
+  .sv-hero-title,
+  .ab-hero-title,
+  .pr-hero-title,
+  .amc-hero-title,
+  .ct-hero-title {
+    font-size: clamp(2.8rem, 5vw, 4.2rem) !important;
+  }
+
+  /* Section Titles & Headings */
+  .section-title {
+    font-size: clamp(2.3rem, 3.8vw, 2.9rem) !important;
+    line-height: 1.25 !important;
+  }
+
+  .card-title, .service-card-title, .domain-title, .case-title {
+    font-size: 1.35rem !important;
+    line-height: 1.35 !important;
+  }
+
+  /* Paragraph / description text */
+  p,
+  .section-subtitle,
+  .sv-hero-desc,
+  .ab-hero-sub,
+  .pr-hero-sub,
+  .amc-hero-desc,
+  .ct-hero-desc {
+    font-size: 1.15rem !important;
+    line-height: 1.78 !important;
+  }
+
+  /* Specs & Badges */
+  .pr-row-lbl, .amc-log-row > span:first-child { font-size: 1.05rem !important; }
+  .pr-row-val, .amc-log-val { font-size: 1.1rem !important; font-weight: 800 !important; }
+  .badge-tag, .badge-pill, .hero-pill { font-size: 0.88rem !important; }
+
+  /* Footer */
+  .footer-heading { font-size: 1.3rem !important; }
+  .footer-link,
+  .footer-brand-desc,
+  .footer-contact-item { font-size: 1.05rem !important; }
+}
+
+/* ============================================================
+   TABLET TYPOGRAPHY — iPad Pro 11" Landscape (769px–1194px)
+   iPad Air (820px), Pixel 9 Pro landscape (~1032px)
+   ============================================================ */
+@media screen and (min-width: 769px) and (max-width: 1194px) {
+  html {
+    font-size: 17.5px;
+  }
+
+  body {
+    line-height: 1.72;
+  }
+
+  /* All headings */
+  h1, h2, h3, h4, h5, h6 {
+    line-height: 1.28;
+  }
+
+  /* Services Hero */
+  .sv-hero-title {
+    font-size: clamp(2.6rem, 5.2vw, 4rem) !important;
+  }
+  .sv-hero-desc {
+    font-size: 1.13rem !important;
+    line-height: 1.78 !important;
+  }
+  .sv-terminal-badge {
+    font-size: 0.86rem !important;
+  }
+  .sv-tag-pill {
+    font-size: 0.84rem !important;
+  }
+
+  /* About Hero */
+  .ab-hero-title {
+    font-size: clamp(2.6rem, 5.2vw, 4rem) !important;
+  }
+  .ab-hero-sub {
+    font-size: 1.13rem !important;
+    line-height: 1.78 !important;
+  }
+  .ab-hero-pill {
+    font-size: 0.86rem !important;
+  }
+
+  /* Products Hero */
+  .pr-hero-title {
+    font-size: clamp(2.6rem, 5.2vw, 4rem) !important;
+  }
+  .pr-hero-sub {
+    font-size: 1.13rem !important;
+    line-height: 1.78 !important;
+  }
+  .pr-hero-badge {
+    font-size: 0.86rem !important;
+  }
+
+  /* AMC Hero */
+  .amc-hero-title {
+    font-size: clamp(2.6rem, 5.2vw, 4rem) !important;
+  }
+  .amc-hero-desc {
+    font-size: 1.13rem !important;
+    line-height: 1.78 !important;
+  }
+
+  /* Contact Hero */
+  .ct-hero-title {
+    font-size: clamp(2.6rem, 5.2vw, 4rem) !important;
+  }
+  .ct-hero-desc {
+    font-size: 1.13rem !important;
+    line-height: 1.78 !important;
+  }
+  .ct-hero-badge {
+    font-size: 0.86rem !important;
+  }
+
+  /* Shared Section Body Text */
+  p, li, td, .card-text, .plan-text {
+    font-size: 1rem;
+    line-height: 1.72;
+  }
+
+  /* Footer */
+  .footer-heading { font-size: 1.25rem !important; }
+  .footer-link,
+  .footer-brand-desc,
+  .footer-contact-item { font-size: 1rem !important; }
+
+  /* Mobile Drawer text on tablet */
+  .mobile-nav-link {
+    font-size: 1.08rem !important;
+    padding: 13px 16px !important;
+  }
+  .mobile-accordion-btn {
+    font-size: 1.08rem !important;
+    padding: 13px 16px !important;
+  }
+  .mobile-sub-link {
+    font-size: 0.98rem !important;
+    padding: 10px 14px !important;
+  }
+  .btn-mobile-login {
+    font-size: 1rem !important;
+    padding: 14px 22px !important;
+  }
+}
+
+/* ============================================================
+   TABLET TYPOGRAPHY — iPad (768px–1024px portrait)
+   Pixel 9 / 8 / 7 portrait, standard iPad portrait
+   ============================================================ */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  html {
+    font-size: 17px;
+  }
+
+  body {
+    line-height: 1.7;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    line-height: 1.27;
+  }
+
+  /* All page hero titles */
+  .sv-hero-title,
+  .ab-hero-title,
+  .pr-hero-title,
+  .amc-hero-title,
+  .ct-hero-title {
+    font-size: clamp(2.3rem, 4.5vw, 3.6rem) !important;
+  }
+
+  /* All page hero desc/sub */
+  .sv-hero-desc,
+  .ab-hero-sub,
+  .pr-hero-sub,
+  .amc-hero-desc,
+  .ct-hero-desc {
+    font-size: 1.08rem !important;
+    line-height: 1.75 !important;
+  }
+
+  /* Badge pills */
+  .sv-terminal-badge,
+  .ab-hero-pill,
+  .pr-hero-badge,
+  .ct-hero-badge {
+    font-size: 0.82rem !important;
+  }
+
+  /* Section Titles & Headings */
+  .section-title {
+    font-size: clamp(2rem, 3.8vw, 2.5rem) !important;
+    line-height: 1.25 !important;
+  }
+
+  .card-title, .service-card-title, .domain-title, .case-title {
+    font-size: 1.25rem !important;
+    line-height: 1.35 !important;
+  }
+
+  /* Body paragraph text & subtitles */
+  p, .section-subtitle {
+    font-size: 1.05rem !important;
+    line-height: 1.72 !important;
+  }
+
+  .pr-row-lbl, .amc-log-row > span:first-child { font-size: 1rem !important; }
+  .pr-row-val, .amc-log-val { font-size: 1.05rem !important; }
+
+  /* Footer */
+  .footer-heading { font-size: 1.25rem !important; }
+  .footer-link,
+  .footer-brand-desc,
+  .footer-contact-item { font-size: 1rem !important; }
+
+  /* Mobile Drawer on iPad portrait */
+  .mobile-nav-link {
+    font-size: 1.05rem !important;
+    padding: 13px 16px !important;
+  }
+  .mobile-accordion-btn {
+    font-size: 1.05rem !important;
+    padding: 13px 16px !important;
+  }
+  .mobile-sub-link {
+    font-size: 0.96rem !important;
+    padding: 10px 14px !important;
+  }
+}
+
+/* Laptop / Medium Desktop (≤ 1180px) */
+@media screen and (max-width: 1180px) {
+  .desktop-nav {
+    gap: 16px;
+  }
+  
+  .nav-link, .dropdown-trigger {
+    font-size: 0.84rem;
+    padding: 6px 4px;
+  }
+  
+  .brand-title {
+    font-size: 0.92rem;
+  }
+  
+  .brand-logo-img {
+    height: 44px;
+  }
+}
+
+/* Tablet & iPad Pro 13 (≤ 1100px) — Perfectly balanced text alignment & grids */
+@media screen and (max-width: 1100px) {
+  .desktop-nav {
+    display: none; /* Switch smoothly to mobile navigation drawer */
+  }
+
+  .mobile-toggle-btn {
+    display: inline-flex;
+  }
+
+  .site-header .brand-logo-img {
+    height: 42px !important;
+    width: auto !important;
+  }
+
+  .header-actions .header-icon-btn {
+    display: none; /* In mobile/tablet, these are housed neatly inside the mobile drawer */
+  }
+
+  /* Header login button is hidden on mobile & tablets — it is housed inside the mobile drawer */
+  .header-actions .btn-login,
+  .site-header #header-login-btn {
+    display: none !important;
+  }
+
+  .footer-top {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+
+  /* Section Header vertical stacking on iPad Pro to fix word wrapping */
+  .h2-section-header {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    text-align: left !important;
+    gap: 12px !important;
+    margin-bottom: 28px !important;
+  }
+
+  .h2-section-header div {
+    width: 100% !important;
+  }
+
+  .h2-pre-title {
+    display: inline-block !important;
+    font-size: 0.84rem !important;
+    white-space: normal !important;
+    letter-spacing: 0.10em !important;
+    margin-bottom: 6px !important;
+    word-break: normal !important;
+  }
+
+  .h2-section-title {
+    font-size: clamp(1.75rem, 5vw, 2.3rem) !important;
+    line-height: 1.25 !important;
+    white-space: normal !important;
+    word-break: normal !important;
+  }
+
+  .h2-section-desc {
+    max-width: 100% !important;
+    font-size: 1rem !important;
+    line-height: 1.65 !important;
+    margin-top: 4px !important;
+  }
+
+  /* Home-2 Equipment Strip: 2x2 grid for spacious, even layout */
+  .h2-equipment-strip {
+    grid-template-columns: repeat(2, 1fr) !important;
+    height: auto !important;
+  }
+
+  .h2-slice-item {
+    height: 300px !important;
+  }
+
+  /* About Us: Standards Grid (4 Certifications) -> 2x2 grid for even text */
+  .ab-standards-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 28px 40px !important;
+  }
+
+  .ab-standard-cell {
+    border-right: none !important;
+    padding: 0 !important;
+    display: flex !important;
+    align-items: flex-start !important;
+    gap: 16px !important;
+  }
+
+  .ab-standard-title {
+    font-size: 1.05rem !important;
+    font-weight: 700 !important;
+    margin-bottom: 4px !important;
+    color: var(--color-white) !important;
+  }
+
+  .ab-standard-meta {
+    font-size: 0.90rem !important;
+    line-height: 1.55 !important;
+    color: #FFFFFF !important;
+  }
+
+  /* About Us: Timeline Grid -> 2x2 for even, relaxed line lengths */
+  .ab-timeline-line {
+    display: none !important;
+  }
+
+  .ab-timeline-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 36px 40px !important;
+  }
+
+  .ab-timeline-node {
+    text-align: left !important;
+  }
+
+  .ab-node-title {
+    font-size: 1.25rem !important;
+    margin-bottom: 6px !important;
+    min-height: auto !important;
+  }
+
+  .ab-node-desc {
+    font-size: 0.95rem !important;
+    line-height: 1.6 !important;
+  }
+}
+
+/* iPad / Tablets / Medium Screens (≤ 768px) & Mobile
+   Pixel 9 Pro, Pixel 8, Pixel 7, iPhone, iPad Portrait
+   Increased font size, immaculate text alignment & brand text
+   ============================================================ */
+@media screen and (max-width: 768px) {
+  :root {
+    --header-height: 66px;
+  }
+
+  html {
+    font-size: 16.5px; /* Increased base text size */
+  }
+
+  body {
+    line-height: 1.65;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  /* Header Brand Identity — Clear small text beside logo */
+  .site-header .brand-link {
+    display: inline-flex !important;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    max-width: calc(100vw - 120px);
+  }
+
+  .site-header .brand-logo-img {
+    height: 40px !important;
+    width: auto !important;
+    flex-shrink: 0 !important;
+  }
+
+  .site-header .brand-info {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    min-width: 0;
+  }
+
+  .site-header .brand-title {
+    font-size: 0.84rem !important;
+    font-weight: 700 !important;
+    color: #FFFFFF !important;
+    line-height: 1.15 !important;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .site-header .brand-subtitle {
+    font-size: 0.58rem !important;
+    font-weight: 600 !important;
+    color: var(--color-cyan, #00d2ff) !important;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    line-height: 1.15 !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* Typography Scale Increase for Mobile / Pixel / iPad */
+  h1, .hero-title, .sv-hero-title, .ab-hero-title, .pr-hero-title, .amc-hero-title, .ct-hero-title {
+    font-size: clamp(2rem, 6.5vw, 2.6rem) !important;
+    line-height: 1.22 !important;
+    letter-spacing: -0.02em;
+  }
+
+  h2, .section-title {
+    font-size: clamp(1.75rem, 5.8vw, 2.3rem) !important;
+    line-height: 1.25 !important;
+    letter-spacing: -0.015em;
+  }
+
+  h3, .card-title, .service-card-title, .domain-title, .case-title {
+    font-size: 1.25rem !important;
+    line-height: 1.35 !important;
+  }
+
+  h4, .sub-heading {
+    font-size: 1.12rem !important;
+    line-height: 1.4 !important;
+  }
+
+  /* Section Subtitle / Paragraphs */
+  p, .section-subtitle, .hero-desc, .sv-hero-desc, .ab-hero-sub, .pr-hero-sub, .amc-hero-desc, .ct-hero-desc {
+    font-size: 1.02rem !important;
+    line-height: 1.68 !important;
+  }
+
+  /* Badges & Pills */
+  .badge-tag, .badge-pill, .hero-pill, .sv-terminal-badge, .ab-hero-pill, .pr-hero-badge, .ct-hero-badge {
+    font-size: 0.82rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.05em;
+    padding: 6px 14px !important;
+  }
+
+  /* Action Buttons */
+  .btn, .btn-primary, .btn-outline, .btn-secondary {
+    font-size: 1rem !important;
+    font-weight: 700 !important;
+    padding: 13px 24px !important;
+    min-height: 48px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* ============================================================
+     TEXT ALIGNMENT & SPECIFICATIONS CARDS (Perfect alignment)
+     ============================================================ */
+  /* Products Inverter & Battery Spec Rows */
+  .pr-table-row {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    gap: 6px !important;
+    padding: 14px 18px !important;
+    text-align: left !important;
+  }
+
+  .pr-row-lbl {
+    font-size: 0.96rem !important;
+    font-weight: 600 !important;
+    color: var(--color-dark-text) !important;
+    line-height: 1.35 !important;
+  }
+
+  .pr-row-val {
+    font-size: 1.05rem !important;
+    font-weight: 800 !important;
+    color: var(--color-electric, #2563EB) !important;
+    line-height: 1.35 !important;
+  }
+
+  /* AMC Diagnostic Checklist Rows */
+  .amc-digital-log {
+    padding: 20px 18px !important;
+  }
+
+  .amc-log-header {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    flex-wrap: wrap !important;
+    gap: 10px !important;
+    margin-bottom: 18px !important;
+  }
+
+  .amc-log-title {
+    font-size: 1.05rem !important;
+    font-weight: 800 !important;
+    line-height: 1.3 !important;
+  }
+
+  .amc-log-status {
+    font-size: 0.78rem !important;
+    padding: 4px 10px !important;
+  }
+
+  .amc-log-row {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    gap: 6px !important;
+    padding: 12px 0 !important;
+    text-align: left !important;
+  }
+
+  .amc-log-row > span:first-child {
+    font-size: 0.96rem !important;
+    font-weight: 600 !important;
+    color: var(--color-dark-text) !important;
+    line-height: 1.4 !important;
+  }
+
+  .amc-log-val {
+    font-size: 1.02rem !important;
+    font-weight: 700 !important;
+    color: var(--color-electric, #2563EB) !important;
+    line-height: 1.4 !important;
+  }
+
+  /* RTL alignment support */
+  html[dir="rtl"] .pr-table-row,
+  html[dir="rtl"] .amc-log-row {
+    text-align: right !important;
+    align-items: flex-start !important;
+  }
+
+  /* Header actions */
+  .header-actions .btn-login,
+  .site-header #header-login-btn {
+    display: none !important;
+  }
+
+  /* Mobile Drawer Links */
+  .mobile-nav-link,
+  .mobile-accordion-btn {
+    font-size: 1.12rem !important;
+    padding: 14px 18px !important;
+  }
+
+  .mobile-sub-link {
+    font-size: 1rem !important;
+    padding: 11px 16px !important;
+  }
+
+  .btn-mobile-login {
+    font-size: 1.05rem !important;
+    padding: 14px 22px !important;
+  }
+
+  #scroll-top-btn {
+    bottom: 20px;
+    right: 20px;
+    width: 44px;
+    height: 44px;
+  }
+
+  html[dir="rtl"] #scroll-top-btn {
+    left: 20px;
+    right: auto;
+  }
+}
+
+/* ============================================================
+   MOBILE PHONE ONLY FOOTER (≤ 739px)
+   ============================================================ */
+@media screen and (max-width: 739px) {
+  .footer-top {
+    grid-template-columns: 1fr !important;
+    gap: 28px !important;
+  }
+
+  .footer-heading {
+    font-size: 1.25rem !important;
+  }
+
+  .footer-link,
+  .footer-brand-desc,
+  .footer-contact-item {
+    font-size: 1rem !important;
+    line-height: 1.6 !important;
+  }
+
+  .footer-bottom {
+    flex-direction: column !important;
+    gap: 14px !important;
+    text-align: center !important;
+  }
+
+  .footer-bottom-links {
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+    gap: 14px !important;
+    font-size: 0.95rem !important;
+  }
+}
+
+/* ============================================================
+   TABLET FOOTER — iPad 13 Pro, iPad Mini, iPad Air (740px–1366px)
+   Matches reference image: Clean 2x2 grid, immaculate left alignment,
+   horizontal bottom bar with copyright on left and links on right
+   ============================================================ */
+@media screen and (min-width: 740px) and (max-width: 1366px) {
+  .site-footer {
+    padding: 60px 0 32px !important;
+  }
+
+  .footer-top {
+    display: grid !important;
+    grid-template-columns: 1.15fr 0.95fr !important;
+    gap: 46px 60px !important;
+    padding-bottom: 46px !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12) !important;
+    text-align: left !important;
+  }
+
+  .footer-col {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    text-align: left !important;
+  }
+
+  /* Col 1: Brand Info */
+  .footer-col:first-child .brand-link {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    margin-bottom: 12px !important;
+  }
+
+  .footer-col:first-child .brand-logo-img {
+    height: 42px !important;
+    width: auto !important;
+  }
+
+  .footer-col:first-child .brand-title {
+    font-size: 0.88rem !important;
+    font-weight: 700 !important;
+    color: #FFFFFF !important;
+  }
+
+  .footer-col:first-child .brand-subtitle {
+    font-size: 0.58rem !important;
+    font-weight: 600 !important;
+    color: var(--color-cyan, #00d2ff) !important;
+  }
+
+  .footer-brand-desc {
+    font-size: 0.95rem !important;
+    line-height: 1.72 !important;
+    color: #94A3B8 !important;
+    max-width: 440px !important;
+    margin-top: 14px !important;
+    text-align: left !important;
+  }
+
+  /* Headings: Clean, crisp uppercase style with cyan underline */
+  .footer-heading {
+    font-family: var(--font-heading) !important;
+    font-size: 1.05rem !important;
+    font-weight: 800 !important;
+    color: #FFFFFF !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.08em !important;
+    margin-bottom: 18px !important;
+    text-align: left !important;
+    display: inline-block !important;
+  }
+
+  .footer-heading::after {
+    content: '' !important;
+    display: block !important;
+    width: 26px !important;
+    height: 2px !important;
+    background: var(--color-cyan, #00d2ff) !important;
+    margin-top: 6px !important;
+    border-radius: 2px !important;
+  }
+
+  /* Vertical Link Lists */
+  .footer-links {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 11px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    list-style: none !important;
+    width: 100% !important;
+  }
+
+  .footer-link {
+    font-size: 0.96rem !important;
+    font-weight: 500 !important;
+    color: #CBD5E1 !important;
+    line-height: 1.5 !important;
+    text-decoration: none !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    transition: all var(--transition-fast) !important;
+  }
+
+  .footer-link:hover {
+    color: var(--color-cyan, #00d2ff) !important;
+    transform: translateX(4px) !important;
+  }
+
+  /* Contact Items */
+  .footer-contact-item {
+    display: flex !important;
+    align-items: flex-start !important;
+    gap: 12px !important;
+    margin-bottom: 14px !important;
+    font-size: 0.95rem !important;
+    line-height: 1.6 !important;
+    color: #CBD5E1 !important;
+    text-align: left !important;
+  }
+
+  .footer-contact-icon {
+    width: 20px !important;
+    height: 20px !important;
+    color: var(--color-cyan, #00d2ff) !important;
+    flex-shrink: 0 !important;
+    margin-top: 2px !important;
+  }
+
+  /* Bottom Bar — Left/Right split like reference image */
+  .footer-bottom {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding-top: 26px !important;
+    text-align: left !important;
+    gap: 20px !important;
+    flex-wrap: nowrap !important;
+  }
+
+  .footer-bottom p {
+    font-size: 0.90rem !important;
+    color: #94A3B8 !important;
+    margin: 0 !important;
+    text-align: left !important;
+    flex-shrink: 0 !important;
+  }
+
+  .footer-bottom-links {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: flex-end !important;
+    align-items: center !important;
+    gap: 22px !important;
+    flex-wrap: nowrap !important;
+  }
+
+  .footer-bottom-links a {
+    font-size: 0.90rem !important;
+    color: #94A3B8 !important;
+    text-decoration: none !important;
+    transition: color var(--transition-fast) !important;
+    white-space: nowrap !important;
+  }
+
+  .footer-bottom-links a:hover {
+    color: var(--color-cyan, #00d2ff) !important;
+  }
+
+  /* RTL Support for iPad */
+  html[dir="rtl"] .footer-top,
+  html[dir="rtl"] .footer-col,
+  html[dir="rtl"] .footer-brand-desc,
+  html[dir="rtl"] .footer-heading,
+  html[dir="rtl"] .footer-contact-item,
+  html[dir="rtl"] .footer-bottom,
+  html[dir="rtl"] .footer-bottom p {
+    text-align: right !important;
+    align-items: flex-start !important;
+  }
+
+  html[dir="rtl"] .footer-bottom {
+    flex-direction: row-reverse !important;
+  }
+
+  html[dir="rtl"] .footer-link:hover {
+    transform: translateX(-4px) !important;
+  }
+}
+
+/* ============================================================
+   SMALL MOBILE VIEWPORTS (≤ 480px)
+   Compact phones, Pixel standard view, iPhone mini
+   ============================================================ */
+@media screen and (max-width: 480px) {
+  :root {
+    --header-height: 62px;
+  }
+
+  .container-custom {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  /* Header Brand Identity */
+  .site-header .brand-link {
+    gap: 8px;
+    max-width: calc(100vw - 90px);
+  }
+
+  .site-header .brand-logo-img {
+    height: 36px !important;
+    width: auto !important;
+  }
+
+  .site-header .brand-title {
+    font-size: 0.78rem !important;
+  }
+
+  .site-header .brand-subtitle {
+    font-size: 0.54rem !important;
+  }
+
+  /* Headings & Text */
+  h1, .hero-title, .sv-hero-title, .ab-hero-title, .pr-hero-title, .amc-hero-title, .ct-hero-title {
+    font-size: clamp(1.85rem, 7vw, 2.3rem) !important;
+  }
+
+  h2, .section-title {
+    font-size: clamp(1.6rem, 6vw, 2rem) !important;
+  }
+
+  p, .section-subtitle, .hero-desc {
+    font-size: 0.98rem !important;
+  }
+
+  .mobile-drawer {
+    width: 310px;
+    max-width: 88vw;
+    padding: 18px;
+  }
+}
+
+/* ============================================================
+   ULTRA SMALL VIEWPORTS (≤ 360px)
+   ============================================================ */
+@media screen and (max-width: 360px) {
+  .site-header .brand-link {
+    gap: 6px;
+    max-width: calc(100vw - 80px);
+  }
+
+  .site-header .brand-logo-img {
+    height: 32px !important;
+    width: auto !important;
+  }
+
+  .site-header .brand-title {
+    font-size: 0.72rem !important;
+  }
+
+  .site-header .brand-subtitle {
+    font-size: 0.50rem !important;
+  }
+
+  .mobile-drawer {
+    width: 280px;
+    max-width: 90vw;
+    padding: 14px;
+  }
+}
+
+/* ============================================================
+   DESKTOP VIEWPORTS (> 1100px) — Strictly hide mobile drawer & backdrop
+   ============================================================ */
+@media screen and (min-width: 1101px) {
+  .mobile-drawer,
+  .mobile-backdrop {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    transform: none !important;
+  }
+}

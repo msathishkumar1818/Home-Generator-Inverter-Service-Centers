@@ -1,0 +1,943 @@
+/* ==========================================================================
+   AMC Plans — Annual Maintenance Contracts & Power Resilience (amc.css)
+   Strict Palette Compliance:
+   - Deep Navy:    #0B1F3A
+   - Electric Blue:#1769FF
+   - Bright Cyan:  #00B8D9
+   - Power Orange: #FF7A00
+   - Soft Blue:    #EAF4FF
+   - Pure White:   #FFFFFF
+   - Dark Text:    #172033
+   No generic box-cards. SLA shield terminal, seasonal maintenance track,
+   digital inspection checklist, frameless comparison matrix, and financial split.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   SECTION 1: HERO — FULL-WIDTH SHIELD TERMINAL & SLA DASHBOARD
+   -------------------------------------------------------------------------- */
+.amc-hero-section {
+  position: relative;
+  min-height: 84vh;
+  min-height: max(84vh, 620px);
+  background: radial-gradient(circle at 75% 25%, rgba(0, 184, 217, 0.18) 0%, transparent 55%),
+              linear-gradient(135deg, #071527 0%, #0B1F3A 65%, #0d264a 100%);
+  color: var(--color-white);
+  padding: 60px 0 80px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.amc-hero-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.22;
+  filter: contrast(1.15) brightness(0.85);
+}
+
+.amc-hero-gradient {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, transparent 35%, rgba(11, 31, 58, 0.95) 90%);
+}
+
+.amc-hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.95fr;
+  gap: 48px;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.amc-sla-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 16px;
+  background: rgba(0, 184, 217, 0.12);
+  border: 1px solid rgba(0, 184, 217, 0.4);
+  border-radius: var(--radius-full);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-cyan);
+  margin-bottom: 22px;
+}
+
+.amc-sla-dot {
+  width: 8px;
+  height: 8px;
+  background: #00E676;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #00E676;
+  animation: pulse-dot 2s infinite ease-in-out;
+}
+
+.amc-hero-title {
+  font-size: clamp(2.4rem, 4.4vw, 3.6rem);
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -0.03em;
+  color: var(--color-white);
+  margin-bottom: 18px;
+}
+
+.amc-hero-title .glow-cyan {
+  color: var(--color-cyan);
+  text-shadow: 0 0 24px rgba(0, 184, 217, 0.45);
+}
+
+.amc-hero-desc {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #FFFFFF;
+  font-weight: 500;
+  max-width: 540px;
+  margin-bottom: 30px;
+}
+
+.amc-hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* Right Side: SLA Shield Hub */
+.amc-sla-hub {
+  background: rgba(11, 31, 58, 0.85);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(0, 184, 217, 0.35);
+  border-radius: var(--radius-lg);
+  padding: 36px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.4);
+}
+
+.amc-hub-heading {
+  font-size: 0.82rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-cyan);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 12px;
+}
+
+.amc-hub-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.amc-hub-icon-wrap {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  background: rgba(23, 105, 255, 0.18);
+  border: 1px solid var(--color-cyan);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-cyan);
+  flex-shrink: 0;
+}
+
+.amc-hub-num {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  line-height: 1.1;
+  font-family: var(--font-heading);
+}
+
+.amc-hub-txt {
+  font-size: 0.8rem;
+  color: #FFFFFF;
+  font-weight: 500;
+}
+
+/* --------------------------------------------------------------------------
+   SECTION 2: INTERACTIVE CONTRACT COVERAGE SELECTOR
+   No box cards! Modern selector strip + dynamic horizontal split display.
+   -------------------------------------------------------------------------- */
+.amc-selector-section {
+  padding: 85px 0;
+  background-color: var(--color-white);
+  position: relative;
+}
+
+html.dark .amc-selector-section {
+  background-color: #000000;
+}
+
+.amc-tabs-nav {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+  margin-bottom: 36px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.amc-tab-btn {
+  background: none;
+  border: none;
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-muted-text);
+  padding: 12px 20px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all var(--transition-fast);
+}
+
+.amc-tab-btn:hover {
+  color: var(--color-electric);
+  background: rgba(23, 105, 255, 0.08);
+}
+
+.amc-tab-btn.active {
+  color: var(--color-white);
+  background: var(--color-navy);
+}
+
+html.dark .amc-tab-btn.active {
+  background: #1769FF;
+}
+
+.amc-tab-pane {
+  display: none;
+}
+
+.amc-tab-pane.active {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.amc-pane-frame {
+  position: relative;
+  height: 480px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--color-navy);
+  box-shadow: 0 16px 42px rgba(11, 31, 58, 0.1);
+}
+
+.amc-pane-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.amc-pane-details h3 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--color-dark-text);
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+
+.amc-pane-details p {
+  font-size: 0.95rem;
+  color: var(--color-muted-text);
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.amc-scope-checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 28px;
+}
+
+.amc-scope-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.amc-check-icon {
+  width: 20px;
+  height: 20px;
+  color: var(--color-cyan);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.amc-scope-text {
+  font-size: 0.9rem;
+  color: var(--color-dark-text);
+  font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------
+   SECTION 3: 4-SEASON PREVENTIVE MAINTENANCE CALENDAR
+   Continuous horizontal seasonal bar with circular photo nodes. Zero cards!
+   -------------------------------------------------------------------------- */
+.amc-calendar-section {
+  padding: 85px 0;
+  background-color: var(--color-soft-blue);
+  position: relative;
+}
+
+html.dark .amc-calendar-section {
+  background-color: #05080c;
+}
+
+.amc-calendar-track {
+  position: relative;
+  margin-top: 48px;
+}
+
+.amc-calendar-line {
+  position: absolute;
+  top: 36px;
+  left: 6%;
+  right: 6%;
+  height: 3px;
+  background: linear-gradient(to right, var(--color-cyan) 0%, var(--color-electric) 50%, var(--color-orange) 100%);
+  z-index: 1;
+}
+
+.amc-calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  position: relative;
+  z-index: 2;
+}
+
+.amc-season-node {
+  text-align: left;
+}
+
+.amc-season-circle {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: var(--color-navy);
+  border: 3px solid var(--color-cyan);
+  box-shadow: 0 0 16px rgba(0, 184, 217, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-white);
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.1rem;
+  margin-bottom: 18px;
+}
+
+.amc-season-quarter {
+  font-size: 0.76rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--color-electric);
+  letter-spacing: 0.08em;
+  margin-bottom: 4px;
+}
+
+.amc-season-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-dark-text);
+  line-height: 1.25;
+  margin-bottom: 8px;
+}
+
+.amc-season-desc {
+  font-size: 0.85rem;
+  color: var(--color-muted-text);
+  line-height: 1.5;
+}
+
+/* --------------------------------------------------------------------------
+   SECTION 4: WHAT AN AMC VISIT ACTUALLY LOOKS LIKE (SPLIT INSPECTION LOG)
+   Left: Real inspection photo; Right: Certified 32-point digital checklist.
+   -------------------------------------------------------------------------- */
+.amc-checklist-section {
+  padding: 85px 0;
+  background-color: var(--color-white);
+}
+
+html.dark .amc-checklist-section {
+  background-color: #000000;
+}
+
+.amc-checklist-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.amc-inspection-media {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  height: 520px;
+  background: var(--color-navy);
+  box-shadow: 0 18px 45px rgba(11, 31, 58, 0.12);
+}
+
+.amc-inspection-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.amc-digital-log {
+  background: var(--color-soft-blue);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 32px 28px;
+}
+
+html.dark .amc-digital-log {
+  background: #0b121c;
+  border-color: #162438;
+}
+
+.amc-log-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 14px;
+  margin-bottom: 20px;
+}
+
+html.dark .amc-log-header {
+  border-bottom-color: #162438;
+}
+
+.amc-log-title {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--color-dark-text);
+}
+
+.amc-log-status {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #00E676;
+  background: rgba(0, 230, 118, 0.12);
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+}
+
+.amc-log-items {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.amc-log-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.95rem;
+  color: var(--color-dark-text);
+  border-bottom: 1px dashed var(--color-border);
+  padding-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+  .amc-log-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    padding-bottom: 12px;
+  }
+}
+
+html.dark .amc-log-row {
+  border-bottom-color: #162438;
+}
+
+.amc-log-val {
+  font-weight: 700;
+  color: var(--color-electric);
+  font-size: 1rem;
+}
+
+/* --------------------------------------------------------------------------
+   SECTION 5: DIRECT SIDE-BY-SIDE AMC TIER COMPARISON
+   Clean borderless comparison table with 1px electric borders (not cards!)
+   -------------------------------------------------------------------------- */
+.amc-comparison-section {
+  padding: 85px 0;
+  background-color: var(--color-soft-blue);
+}
+
+html.dark .amc-comparison-section {
+  background-color: #05080c;
+}
+
+.amc-compare-table-wrap {
+  overflow-x: auto;
+  margin-top: 40px;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: 0 10px 30px rgba(11, 31, 58, 0.06);
+}
+
+html.dark .amc-compare-table-wrap {
+  background: #0b121c;
+  border-color: #162438;
+}
+
+.amc-compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 680px;
+}
+
+.amc-compare-table th,
+.amc-compare-table td {
+  padding: 18px 24px;
+  text-align: left;
+  border-bottom: 1px solid var(--color-border);
+}
+
+html.dark .amc-compare-table th,
+html.dark .amc-compare-table td {
+  border-bottom-color: #162438;
+}
+
+.amc-compare-table th {
+  background: var(--color-navy);
+  color: var(--color-white);
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.amc-compare-table td {
+  font-size: 0.9rem;
+  color: var(--color-dark-text);
+}
+
+.amc-cell-featured {
+  background: rgba(23, 105, 255, 0.06);
+  font-weight: 700;
+}
+
+html.dark .amc-cell-featured {
+  background: rgba(23, 105, 255, 0.15);
+}
+
+/* --------------------------------------------------------------------------
+   SECTION 6: ANNUAL MAINTENANCE CONTRACT ENROLLMENT (THE NORMAL CTA SECTION)
+   Per user explicit instruction: "athula one normal cta section irukum"
+   -------------------------------------------------------------------------- */
+.amc-cta-section {
+  padding: 80px 0;
+  background-color: var(--color-white);
+  position: relative;
+}
+
+html.dark .amc-cta-section {
+  background-color: #000000;
+}
+
+.amc-cta-container {
+  background: linear-gradient(135deg, #0B1F3A 0%, #0d264a 60%, #071527 100%);
+  border-radius: var(--radius-lg);
+  padding: 56px 48px;
+  border-top: 5px solid var(--color-orange);
+  box-shadow: 0 20px 48px rgba(11, 31, 58, 0.2);
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 40px;
+  align-items: center;
+  color: var(--color-white);
+}
+
+.amc-cta-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: var(--color-orange);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.amc-cta-heading {
+  font-size: clamp(1.8rem, 2.8vw, 2.4rem);
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 14px;
+  color: var(--color-white);
+}
+
+.amc-cta-desc {
+  font-size: 0.95rem;
+  color: #FFFFFF;
+  font-weight: 500;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.amc-cta-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.amc-cta-guarantees {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.amc-cta-guarantee-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 8px 14px;
+  border-radius: 9999px;
+}
+
+.amc-cta-check-icon {
+  width: 16px;
+  height: 16px;
+  color: var(--color-cyan);
+  flex-shrink: 0;
+}
+
+.amc-cta-buttons {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.amc-cta-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--color-orange);
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 14px 28px;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  box-shadow: 0 6px 20px rgba(255, 122, 0, 0.35);
+  transition: background var(--transition-fast), transform var(--transition-fast);
+}
+
+.amc-cta-btn-primary:hover {
+  background: var(--color-orange-hover);
+  transform: translateY(-2px);
+}
+
+.amc-cta-btn-call {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 14px 24px;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition: background var(--transition-fast), transform var(--transition-fast);
+}
+
+.amc-cta-btn-call:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+/* Right Contract Desk & Response Panel (Clean, Non-Form) */
+.amc-cta-response-card {
+  background: rgba(7, 21, 39, 0.75);
+  border: 1px solid rgba(0, 184, 217, 0.35);
+  border-radius: var(--radius-md);
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(8px);
+}
+
+.amc-response-live-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #00E676;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.amc-response-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #00E676;
+  box-shadow: 0 0 10px #00E676;
+  animation: pulseDot 2s infinite ease-in-out;
+  flex-shrink: 0;
+}
+
+.amc-response-phone-box {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 16px 18px;
+  border-radius: var(--radius-sm);
+}
+
+.amc-response-phone-label {
+  display: block;
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: var(--color-cyan);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 6px;
+}
+
+.amc-response-phone-number {
+  display: block;
+  font-size: clamp(1.4rem, 2vw, 1.75rem);
+  font-weight: 800;
+  color: #FFFFFF;
+  text-decoration: none;
+  font-family: var(--font-heading);
+  line-height: 1.15;
+  margin-bottom: 6px;
+  transition: color var(--transition-fast);
+}
+
+.amc-response-phone-number:hover {
+  color: var(--color-orange);
+}
+
+.amc-response-phone-note {
+  display: block;
+  font-size: 0.78rem;
+  color: #FFFFFF;
+  opacity: 0.9;
+}
+
+.amc-response-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 14px 0;
+  text-align: center;
+}
+
+.amc-response-metric {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.amc-metric-val {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--color-orange);
+  font-family: var(--font-heading);
+  line-height: 1.1;
+}
+
+.amc-metric-lbl {
+  font-size: 0.72rem;
+  color: #FFFFFF;
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+.amc-response-footer-text {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.8rem;
+  color: #FFFFFF;
+  font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------
+   SECTION 7: PREVENTIVE AMC VS CATASTROPHIC BREAKDOWN (FINANCIAL SPLIT)
+   High-contrast financial visual metric with zero box cards!
+   -------------------------------------------------------------------------- */
+.amc-financial-section {
+  padding: 85px 0 95px;
+  background-color: var(--color-soft-blue);
+}
+
+html.dark .amc-financial-section {
+  background-color: #05080c;
+}
+
+.amc-financial-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin-top: 40px;
+}
+
+.amc-financial-panel {
+  border-radius: var(--radius-md);
+  padding: 36px 30px;
+  border: 1px solid var(--color-border);
+  background: var(--color-white);
+}
+
+html.dark .amc-financial-panel {
+  background: #0b121c;
+  border-color: #162438;
+}
+
+.amc-financial-panel.positive {
+  border-top: 5px solid #00E676;
+}
+
+.amc-financial-panel.negative {
+  border-top: 5px solid #FF5252;
+}
+
+.amc-fin-tag {
+  font-size: 0.76rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 8px;
+}
+
+.amc-financial-panel.positive .amc-fin-tag { color: #00E676; }
+.amc-financial-panel.negative .amc-fin-tag { color: #FF5252; }
+
+.amc-fin-title {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--color-dark-text);
+  margin-bottom: 16px;
+}
+
+.amc-fin-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  list-style: none;
+  padding: 0;
+}
+
+.amc-fin-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.88rem;
+  color: var(--color-muted-text);
+}
+
+/* --------------------------------------------------------------------------
+   RESPONSIVE DESIGN (320px - 1440px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .amc-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .amc-tab-pane.active {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .amc-pane-frame {
+    height: 360px;
+  }
+
+  .amc-calendar-line {
+    display: none;
+  }
+
+  .amc-calendar-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+
+  .amc-checklist-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .amc-inspection-media {
+    height: 380px;
+  }
+
+  .amc-cta-container {
+    grid-template-columns: 1fr;
+    padding: 36px 28px;
+  }
+
+  .amc-financial-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .amc-hero-title {
+    font-size: 2.1rem;
+  }
+
+  .amc-calendar-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .amc-cta-container {
+    padding: 28px 18px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   RTL SUPPORT
+   -------------------------------------------------------------------------- */
+[dir="rtl"] .amc-season-node {
+  text-align: right;
+}
+
+[dir="rtl"] .amc-compare-table th,
+[dir="rtl"] .amc-compare-table td {
+  text-align: right;
+}

@@ -1,0 +1,941 @@
+/* ==========================================================================
+   Products — Certified Power Backup Systems & Equipment (products.css)
+   Strict Palette Compliance:
+   - Deep Navy:    #0B1F3A
+   - Electric Blue:#1769FF
+   - Bright Cyan:  #00B8D9
+   - Power Orange: #FF7A00
+   - Soft Blue:    #EAF4FF
+   - Pure White:   #FFFFFF
+   - Dark Text:    #172033
+   No generic box-cards. Dual HUD pillars, interactive power meter calculator,
+   exploded mechanical cutaways, magazine spreads, and comparison grids.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   SECTION 1: HERO — ULTRA-WIDE SHOWCASE WITH DUAL SPEC HUD PILLARS
+   -------------------------------------------------------------------------- */
+.pr-hero-section {
+  position: relative;
+  min-height: 84vh;
+  min-height: max(84vh, 620px);
+  background: radial-gradient(circle at 50% 25%, rgba(23, 105, 255, 0.22) 0%, transparent 60%),
+              linear-gradient(135deg, #071527 0%, #0B1F3A 65%, #0d264a 100%);
+  color: var(--color-white);
+  padding: 60px 0 80px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.pr-hero-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.24;
+  filter: contrast(1.15) brightness(0.85);
+}
+
+.pr-hero-gradient {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, transparent 30%, rgba(11, 31, 58, 0.95) 90%);
+}
+
+.pr-hero-inner {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 0.8fr 1.4fr 0.8fr;
+  gap: 36px;
+  align-items: center;
+}
+
+/* Side Spec Pillars */
+.pr-spec-pillar {
+  background: rgba(11, 31, 58, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 184, 217, 0.35);
+  border-radius: var(--radius-md);
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.pr-pillar-item {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 14px;
+}
+
+.pr-pillar-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.pr-pillar-val {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--color-cyan);
+  font-family: var(--font-heading);
+  line-height: 1.1;
+  margin-bottom: 4px;
+}
+
+.pr-pillar-lbl {
+  font-size: 0.78rem;
+  color: #FFFFFF;
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+/* Center Hero Core */
+.pr-hero-center {
+  text-align: center;
+}
+
+.pr-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 18px;
+  background: rgba(0, 184, 217, 0.12);
+  border: 1px solid rgba(0, 184, 217, 0.4);
+  border-radius: var(--radius-full);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-cyan);
+  margin-bottom: 20px;
+}
+
+.pr-hero-title {
+  font-size: clamp(2.4rem, 4.4vw, 3.6rem);
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -0.03em;
+  margin-bottom: 18px;
+  color: #FFFFFF;
+}
+
+.pr-hero-title .glow-cyan {
+  color: var(--color-cyan);
+  text-shadow: 0 0 24px rgba(0, 184, 217, 0.45);
+}
+
+.pr-hero-sub {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #FFFFFF;
+  font-weight: 500;
+  max-width: 580px;
+  margin: 0 auto 32px;
+}
+
+.pr-hero-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* --------------------------------------------------------------------------
+   SECTION 2: INTERACTIVE HOUSEHOLD LOAD CALCULATOR & MATCHER
+   No box cards! Interactive power meter dial + dynamic system matcher.
+   -------------------------------------------------------------------------- */
+.pr-calc-section {
+  padding: 85px 0;
+  background-color: var(--color-white);
+  position: relative;
+}
+
+html.dark .pr-calc-section {
+  background-color: #000000;
+}
+
+.pr-calc-box {
+  background: radial-gradient(circle at 10% 20%, rgba(23, 105, 255, 0.1) 0%, transparent 40%),
+              linear-gradient(135deg, #071527 0%, #0B1F3A 100%);
+  border-radius: var(--radius-lg);
+  padding: 48px;
+  border: 1px solid rgba(0, 184, 217, 0.3);
+  box-shadow: 0 20px 45px rgba(11, 31, 58, 0.15);
+  color: var(--color-white);
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.pr-appliance-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin-top: 24px;
+}
+
+.pr-appliance-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 12px 16px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  user-select: none;
+}
+
+.pr-appliance-item.selected {
+  background: rgba(23, 105, 255, 0.25);
+  border-color: var(--color-cyan);
+}
+
+.pr-app-checkbox {
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all var(--transition-fast);
+}
+
+.pr-appliance-item.selected .pr-app-checkbox {
+  background: var(--color-cyan);
+  border-color: var(--color-cyan);
+}
+
+.pr-app-checkbox::after {
+  content: '✓';
+  color: #0B1F3A;
+  font-weight: 800;
+  font-size: 0.75rem;
+  display: none;
+}
+
+.pr-appliance-item.selected .pr-app-checkbox::after {
+  display: block;
+}
+
+.pr-app-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.pr-app-name {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.pr-app-watts {
+  font-size: 0.75rem;
+  color: var(--color-cyan);
+}
+
+/* Right Meter & Recommended Tier */
+.pr-meter-column {
+  text-align: center;
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(0, 184, 217, 0.25);
+  border-radius: var(--radius-md);
+  padding: 36px 24px;
+}
+
+.pr-meter-title {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-cyan);
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.pr-total-kwh {
+  font-size: clamp(2.4rem, 3.5vw, 3.2rem);
+  font-weight: 800;
+  color: #FFFFFF;
+  line-height: 1;
+  font-family: var(--font-heading);
+  margin-bottom: 6px;
+}
+
+.pr-total-sub {
+  font-size: 0.82rem;
+  color: #FFFFFF;
+  font-weight: 500;
+  margin-bottom: 24px;
+}
+
+.pr-recommendation-box {
+  background: rgba(255, 122, 0, 0.15);
+  border: 1px solid var(--color-orange);
+  border-radius: var(--radius-sm);
+  padding: 14px;
+  margin-bottom: 22px;
+}
+
+.pr-rec-name {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--color-orange);
+  margin-bottom: 4px;
+}
+
+.pr-rec-desc {
+  font-size: 0.78rem;
+  color: #FFFFFF;
+  font-weight: 500;
+}
+
+/* --------------------------------------------------------------------------
+   SECTION 3: FLAGSHIP SILENT STANDBY GENERATOR ARCHITECTURAL CUTAWAY
+   Exploded mechanical feature breakdown directly beside full-bleed photo.
+   -------------------------------------------------------------------------- */
+.pr-flagship-section {
+  padding: 85px 0;
+  background-color: var(--color-soft-blue);
+  position: relative;
+}
+
+html.dark .pr-flagship-section {
+  background-color: #05080c;
+}
+
+.pr-flagship-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.pr-flagship-media {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  height: 520px;
+  background: var(--color-navy);
+  box-shadow: 0 20px 48px rgba(11, 31, 58, 0.14);
+}
+
+.pr-flagship-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.pr-flagship-badge {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  background: rgba(11, 31, 58, 0.92);
+  border: 1px solid var(--color-orange);
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+  color: var(--color-white);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* Right Mechanical Breakdown */
+.pr-flagship-content {
+  padding-left: 8px;
+}
+
+.pr-mechanical-specs {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin: 28px 0 34px;
+}
+
+.pr-mech-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.pr-mech-icon {
+  width: 24px;
+  height: 24px;
+  color: var(--color-electric);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.pr-mech-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-dark-text);
+  margin-bottom: 4px;
+}
+
+.pr-mech-desc {
+  font-size: 0.86rem;
+  color: var(--color-muted-text);
+  line-height: 1.5;
+}
+
+/* --------------------------------------------------------------------------
+   SECTION 4: SOLAR HYBRID & WALL-MOUNTED INVERTERS (MAGAZINE SPREAD)
+   Full-bleed visual lookbook of wall-mounted lithium backup power walls.
+   -------------------------------------------------------------------------- */
+.pr-inverter-section {
+  padding: 85px 0;
+  background-color: var(--color-white);
+}
+
+html.dark .pr-inverter-section {
+  background-color: #000000;
+}
+
+.pr-inverter-grid {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.pr-inverter-frame {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  height: 500px;
+  background: var(--color-navy);
+  box-shadow: 0 16px 42px rgba(11, 31, 58, 0.12);
+}
+
+.pr-inverter-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.pr-inverter-spec-table {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 28px;
+}
+
+.pr-table-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  background: var(--color-soft-blue);
+  border-radius: var(--radius-sm);
+}
+
+@media (max-width: 768px) {
+  .pr-table-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+}
+
+html.dark .pr-table-row {
+  background: #0b121c;
+}
+
+.pr-row-lbl {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-dark-text);
+}
+
+.pr-row-val {
+  font-size: 1.02rem;
+  font-weight: 800;
+  color: var(--color-electric);
+}
+
+/* --------------------------------------------------------------------------
+   SECTION 5: SIDE-BY-SIDE EQUIPMENT COMPARISON MATRIX
+   Full-width diagnostic comparison matrix with 1px electric borders (not cards!)
+   -------------------------------------------------------------------------- */
+.pr-comparison-section {
+  padding: 85px 0;
+  background-color: var(--color-soft-blue);
+}
+
+html.dark .pr-comparison-section {
+  background-color: #05080c;
+}
+
+.pr-comparison-table-wrap {
+  overflow-x: auto;
+  margin-top: 40px;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: 0 10px 30px rgba(11, 31, 58, 0.06);
+}
+
+html.dark .pr-comparison-table-wrap {
+  background: #0b121c;
+  border-color: #162438;
+}
+
+.pr-compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 680px;
+}
+
+.pr-compare-table th,
+.pr-compare-table td {
+  padding: 18px 24px;
+  text-align: left;
+  border-bottom: 1px solid var(--color-border);
+}
+
+html.dark .pr-compare-table th,
+html.dark .pr-compare-table td {
+  border-bottom-color: #162438;
+}
+
+.pr-compare-table th {
+  background: var(--color-navy);
+  color: var(--color-white);
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.pr-compare-table td {
+  font-size: 0.9rem;
+  color: var(--color-dark-text);
+}
+
+.pr-compare-check {
+  color: var(--color-cyan);
+  font-weight: 800;
+}
+
+/* --------------------------------------------------------------------------
+   SECTION 6: CAPACITY SIZING AUDIT REQUEST (THE NORMAL CTA SECTION)
+   Per user explicit instruction: "athula one normal cta section irukum"
+   -------------------------------------------------------------------------- */
+.pr-cta-section {
+  padding: 80px 0;
+  background-color: var(--color-white);
+  position: relative;
+}
+
+html.dark .pr-cta-section {
+  background-color: #000000;
+}
+
+.pr-cta-container {
+  background: linear-gradient(135deg, #0B1F3A 0%, #0d264a 60%, #071527 100%);
+  border-radius: var(--radius-lg);
+  padding: 56px 48px;
+  border-left: 6px solid var(--color-orange);
+  box-shadow: 0 20px 48px rgba(11, 31, 58, 0.2);
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 40px;
+  align-items: center;
+  color: var(--color-white);
+}
+
+.pr-cta-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: var(--color-orange);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.pr-cta-heading {
+  font-size: clamp(1.8rem, 2.8vw, 2.4rem);
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 14px;
+  color: var(--color-white);
+}
+
+.pr-cta-desc {
+  font-size: 0.95rem;
+  color: #FFFFFF;
+  font-weight: 500;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.pr-cta-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.pr-cta-guarantees {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.pr-cta-guarantee-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 8px 14px;
+  border-radius: 9999px;
+}
+
+.pr-cta-check-icon {
+  width: 16px;
+  height: 16px;
+  color: var(--color-cyan);
+  flex-shrink: 0;
+}
+
+.pr-cta-buttons {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.pr-cta-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--color-orange);
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 14px 28px;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  box-shadow: 0 6px 20px rgba(255, 122, 0, 0.35);
+  transition: background var(--transition-fast), transform var(--transition-fast);
+}
+
+.pr-cta-btn-primary:hover {
+  background: var(--color-orange-hover);
+  transform: translateY(-2px);
+}
+
+.pr-cta-btn-call {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 14px 24px;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition: background var(--transition-fast), transform var(--transition-fast);
+}
+
+.pr-cta-btn-call:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+/* Right Advisory Panel (Clean, Non-Form) */
+.pr-cta-advisory-card {
+  background: rgba(7, 21, 39, 0.75);
+  border: 1px solid rgba(0, 184, 217, 0.35);
+  border-radius: var(--radius-md);
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(8px);
+}
+
+.pr-advisory-live-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #00E676;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.pr-advisory-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #00E676;
+  box-shadow: 0 0 10px #00E676;
+  animation: pulseDot 2s infinite ease-in-out;
+  flex-shrink: 0;
+}
+
+.pr-advisory-phone-box {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 16px 18px;
+  border-radius: var(--radius-sm);
+}
+
+.pr-advisory-phone-label {
+  display: block;
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: var(--color-cyan);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 6px;
+}
+
+.pr-advisory-phone-number {
+  display: block;
+  font-size: clamp(1.4rem, 2vw, 1.75rem);
+  font-weight: 800;
+  color: #FFFFFF;
+  text-decoration: none;
+  font-family: var(--font-heading);
+  line-height: 1.15;
+  margin-bottom: 6px;
+  transition: color var(--transition-fast);
+}
+
+.pr-advisory-phone-number:hover {
+  color: var(--color-orange);
+}
+
+.pr-advisory-phone-note {
+  display: block;
+  font-size: 0.78rem;
+  color: #FFFFFF;
+  opacity: 0.9;
+}
+
+.pr-advisory-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 14px 0;
+  text-align: center;
+}
+
+.pr-advisory-metric {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pr-metric-val {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--color-orange);
+  font-family: var(--font-heading);
+  line-height: 1.1;
+}
+
+.pr-metric-lbl {
+  font-size: 0.72rem;
+  color: #FFFFFF;
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+.pr-advisory-footer-text {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.8rem;
+  color: #FFFFFF;
+  font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------
+   SECTION 7: GENUINE OEM SPARES & UPGRADE ACCESSORIES STRIP
+   Horizontal borderless filmstrip displaying verified factory accessories.
+   -------------------------------------------------------------------------- */
+.pr-accessories-section {
+  padding: 85px 0 95px;
+  background-color: var(--color-white);
+}
+
+html.dark .pr-accessories-section {
+  background-color: #000000;
+}
+
+.pr-accessories-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.pr-acc-frame {
+  position: relative;
+  height: 340px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--color-navy);
+}
+
+.pr-acc-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.85);
+  transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.pr-acc-frame:hover img {
+  transform: scale(1.06);
+  filter: brightness(0.95);
+}
+
+.pr-acc-caption {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(11, 31, 58, 0.98) 0%, rgba(11, 31, 58, 0.4) 50%, transparent 80%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 22px;
+  color: var(--color-white);
+}
+
+.pr-acc-tag {
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: var(--color-cyan);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 4px;
+}
+
+.pr-acc-name {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.pr-acc-price {
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: var(--color-orange);
+}
+
+/* --------------------------------------------------------------------------
+   RESPONSIVE DESIGN (320px - 1440px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .pr-hero-inner {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .pr-spec-pillar {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .pr-calc-box {
+    grid-template-columns: 1fr;
+    gap: 36px;
+    padding: 32px 24px;
+  }
+
+  .pr-flagship-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .pr-flagship-media {
+    height: 380px;
+  }
+
+  .pr-inverter-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .pr-inverter-frame {
+    height: 380px;
+  }
+
+  .pr-cta-container {
+    grid-template-columns: 1fr;
+    padding: 36px 28px;
+  }
+
+  .pr-accessories-strip {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .pr-hero-title {
+    font-size: 2.1rem;
+  }
+
+  .pr-spec-pillar {
+    grid-template-columns: 1fr;
+  }
+
+  .pr-appliance-list {
+    grid-template-columns: 1fr;
+  }
+
+  .pr-accessories-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .pr-cta-container {
+    padding: 28px 18px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   RTL SUPPORT
+   -------------------------------------------------------------------------- */
+[dir="rtl"] .pr-cta-container {
+  border-left: none;
+  border-right: 6px solid var(--color-orange);
+}
+
+[dir="rtl"] .pr-compare-table th,
+[dir="rtl"] .pr-compare-table td {
+  text-align: right;
+}
+
+[dir="rtl"] .pr-flagship-badge {
+  left: auto;
+  right: 24px;
+}
